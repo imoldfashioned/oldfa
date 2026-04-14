@@ -34,26 +34,19 @@
         /* TOP 링크: 720px 레이아웃 안쪽 우측 하단에 고정 */
         .top-link {
     position: fixed;
-    bottom: 30px; /* 바닥에서 조금 더 위로 올림 */
-    /* 720px 레이아웃 안쪽으로 더 배치 */
-    left: 50%;
-    margin-left: 260px; /* 기존 300px에서 260px로 줄여 안쪽으로 이동 */
+    bottom: 30px;
     
+    /* 화면의 정중앙(50%)에서 720px의 절반인 360px만큼 오른쪽으로 보냄 */
+    left: 50%;
+    /* 버튼의 너비만큼 왼쪽으로 살짝 들여서(260~320px 사이 조정) 안쪽 배치 */
+    margin-left: 280px; 
+
     font-weight: bold;
     font-size: 14px;
     z-index: 9999;
-    
-    /* 배경 및 그림자 제거 */
     background: none;
-    box-shadow: none;
-    padding: 0;
-    
-    /* 가독성을 위해 불투명도 조절 (선택 사항) */
-    opacity: 0.7;
-}
-
-.top-link:hover {
-    opacity: 1;
+    text-decoration: none;
+    color: black;
 }
     </style>
 </head>
