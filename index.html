@@ -1,8 +1,12 @@
+요청하신 5가지 수정 사항을 모두 반영하여 코드를 최적화하였습니다. 특히 어느 기기에서나 720px의 일정한 비율로 보이게 하면서도, 글자가 넘치거나 버튼이 사라지지 않도록 설정을 보완했습니다.
+
+수정 및 간소화된 코드
+HTML
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=720, initial-scale=1">
+    <meta name="viewport" content="width=720, user-scalable=yes">
     <title>가사집</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,13 +17,16 @@
         body {
             background-color: #e0e0e0;
             font-family: 'Noto Sans KR', sans-serif;
-            /* 가로 너비 720px 고정 및 중앙 정렬 */
+            /* 5. 가로 너비 720px 고정 및 중앙 정렬 */
             width: 720px;
             margin: 0 auto;
-            /* 좌측 여백 추가 */
-            padding-left: 30px;
+            /* 1. 좌측 30px, 우측 10px 여백 설정 */
+            padding: 0 10px 0 30px;
             box-sizing: border-box;
-            overflow-x: auto;
+            /* 2. 가로 스크롤 방지 및 자동 줄바꿈 */
+            overflow-x: hidden;
+            word-break: break-all;
+            white-space: normal;
         }
 
         a {
@@ -27,18 +34,32 @@
             color: black;
         }
 
-        .link-large  { font-size: 24px; }
-        .link-medium { font-size: 14px; }
-        .link-small  { font-size: 12px; }
+        /* 4. 전체적으로 폰트 크기 상향 조정 */
+        .link-large  { font-size: 28px; font-weight: bold; display: block; margin: 20px 0; }
+        .link-medium { font-size: 18px; line-height: 1.6; }
+        .link-small  { font-size: 15px; color: #555; }
 
-        /* TOP 링크: 720px 레이아웃 안쪽 우측 하단에 고정 */
-       .top-link {
-    position: fixed;
-    bottom: 30px;
-    right: 20px; /* 창의 오른쪽 끝에서 20px 띄움 */
-    left: auto;  /* 기존 left 설정 해제 */
-    margin-left: 0;
-}
+        /* 3. TOP 버튼: 720px 영역 내 우측 하단 상시 노출 */
+        .top-link {
+            position: fixed;
+            bottom: 30px;
+            /* 화면 중앙 기준 오른쪽으로 배치하여 720px 레이아웃 안에 고정 */
+            left: 50%;
+            margin-left: 280px; 
+            font-weight: bold;
+            font-size: 18px; /* 버튼 크기 확대 */
+            z-index: 9999;
+            background: none;
+        }
+
+        /* PC 브라우저가 720px보다 좁아질 경우를 대비한 안전장치 */
+        @media (max-width: 720px) {
+            .top-link {
+                left: auto;
+                right: 20px;
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 
