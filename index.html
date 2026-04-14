@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=720, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가사집</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,16 +13,23 @@
         body {
             background-color: #e0e0e0;
             font-family: 'Noto Sans KR', sans-serif;
-            /* 5. 가로 너비 720px 고정 및 중앙 정렬 */
-            width: 720px;
             margin: 0 auto;
-            /* 1. 좌측 30px, 우측 10px 여백 설정 */
+            /* 1. 좌측 30px, 우측 10px 여백 유지 */
             padding: 0 10px 0 30px;
             box-sizing: border-box;
-            /* 2. 가로 스크롤 방지 및 자동 줄바꿈 */
+            
+            /* 2, 5. PC 멈춤 해결: 유연한 최대 너비 설정 */
+            width: 100%;
+            max-width: 720px; 
+            
+            /* 가로 스크롤 방지 및 줄바꿈 최적화 */
             overflow-x: hidden;
             word-break: break-all;
             white-space: normal;
+            
+            /* 렌더링 성능 향상 (PC 끌림 현상 방지) */
+            -webkit-font-smoothing: antialiased;
+            backface-visibility: hidden;
         }
 
         a {
@@ -30,31 +37,35 @@
             color: black;
         }
 
-        /* 4. 전체적으로 폰트 크기 상향 조정 */
+        /* 4. 폰트 크기 상향 유지 */
         .link-large  { font-size: 32px; font-weight: bold; display: block; margin: 20px 0; }
-        .link-medium { font-size: 24px; line-height: 1.6; }
-        .link-small  { font-size: 18px; color: #555; }
+        .link-medium { font-size: 26px; line-height: 1.6; }
+        .link-small  { font-size: 20px; color: #555; }
 
-        /* 3. TOP 버튼: 720px 영역 내 우측 하단 상시 노출 */
+        /* 3. TOP 버튼: PC/모바일 통합 최적화 배치 */
         .top-link {
             position: fixed;
-            bottom: 10px;
-            /* 화면 중앙 기준 오른쪽으로 배치하여 720px 레이아웃 안에 고정 */
+            bottom: 10px; /* 가독성을 위해 살짝 올림 */
+            /* 720px 레이아웃의 우측 끝을 기준으로 배치 */
             left: 50%;
             margin-left: 280px; 
             font-weight: bold;
-            font-size: 18px; /* 버튼 크기 확대 */
+            font-size: 18px;
             z-index: 9999;
             background: none;
+            /* 클릭 영역 확보 */
+            padding: 5px;
         }
 
-        /* PC 브라우저가 720px보다 좁아질 경우를 대비한 안전장치 */
-        @media (max-width: 720px) {
+        /* 화면이 720px보다 좁아지면 버튼이 화면 밖으로 나가지 않게 조절 */
+        @media (max-width: 760px) {
             .top-link {
                 left: auto;
                 right: 20px;
                 margin-left: 0;
             }
+            /* 모바일에서 720px의 비율을 강제하기 위한 줌 조절 (선택 사항) */
+            /* html { zoom: 1; } */
         }
     </style>
 </head>
