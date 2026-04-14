@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=1">
+    <meta name="viewport" content="width=720, initial-scale=1">
     <title>가사집</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,9 +13,12 @@
         body {
             background-color: #e0e0e0;
             font-family: 'Noto Sans KR', sans-serif;
-            /* 페이지 고정 사이즈 및 중앙 정렬 */
-            width: 800px;
-            margin-left: 30px;
+            /* 가로 너비 720px 고정 및 중앙 정렬 */
+            width: 720px;
+            margin: 0 auto;
+            /* 좌측 여백 추가 */
+            padding-left: 30px;
+            box-sizing: border-box;
             overflow-x: auto;
         }
 
@@ -24,15 +27,23 @@
             color: black;
         }
 
-        /* 폰트 사이즈 클래스 간소화 */
         .link-large  { font-size: 24px; }
         .link-medium { font-size: 14px; }
         .link-small  { font-size: 12px; }
 
+        /* TOP 링크: 720px 레이아웃 안쪽 우측 하단에 고정 */
         .top-link {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
+            bottom: 20px;
+            /* 화면 중앙에서 720px의 절반인 360px 이동 후, 안쪽으로 20px 들임 */
+            left: 50%;
+            margin-left: 300px; 
+            font-weight: bold;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 8px 12px;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
     </style>
 </head>
