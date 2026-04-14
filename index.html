@@ -32,21 +32,12 @@
         .link-small  { font-size: 12px; }
 
         /* TOP 링크: 720px 레이아웃 안쪽 우측 하단에 고정 */
-        .top-link {
+       .top-link {
     position: fixed;
     bottom: 30px;
-    
-    /* 화면의 정중앙(50%)에서 720px의 절반인 360px만큼 오른쪽으로 보냄 */
-    left: 50%;
-    /* 버튼의 너비만큼 왼쪽으로 살짝 들여서(260~320px 사이 조정) 안쪽 배치 */
-    margin-left: 280px; 
-
-    font-weight: bold;
-    font-size: 14px;
-    z-index: 9999;
-    background: none;
-    text-decoration: none;
-    color: black;
+    right: 20px; /* 창의 오른쪽 끝에서 20px 띄움 */
+    left: auto;  /* 기존 left 설정 해제 */
+    margin-left: 0;
 }
     </style>
 </head>
