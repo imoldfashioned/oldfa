@@ -65,6 +65,17 @@
         }
     }
 
+
+
+/* 모바일 환경(760px 이하)에서만 본문 폭(720px)에 맞추고 중앙 정렬 */
+@media (max-width: 760px) {
+    .navbar-inner {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+}
+
+
 /* 상단 고정 바 스타일 */
 .navbar {
     position: fixed;
@@ -95,15 +106,7 @@
 .navbar-inner::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
-
-/* 모바일 환경(760px 이하)에서만 본문 폭(720px)에 맞추고 중앙 정렬 */
-@media (max-width: 760px) {
-    .navbar-inner {
-        max-width: 720px;
-        margin: 0 auto;
-    }
-}
-
+       
 .navbar-inner a {
     text-decoration: none;
     color: #333;
@@ -118,7 +121,7 @@ body {
 
        /* 모든 가사 섹션 제목(또는 이동 대상)에 적용 */
 h2, [id] {
-    scroll-margin-top: 62px; /* 상단 바 높이(60px) + 여유 공간(20px) */
+    scroll-margin-top: 60px; /* 상단 바 높이(60px) + 여유 공간(20px) */
 }
 
 
@@ -138,7 +141,7 @@ h2, [id] {
     </div>
 
     
-<a name="top"><hr></a>
+<br><br><a name="top"><hr></a>
 <div>
 <b>
 <div id="jp">
