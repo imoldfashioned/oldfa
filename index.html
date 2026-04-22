@@ -129,6 +129,15 @@ h2, [id] {
     scroll-margin-top: 80px; /* 이 위치에서 80px 위가 화면 상단이 됨 */
 }
 
+/* name 속성이 있는 모든 a 태그에 일괄 적용 */
+a[name] {
+    display: block;
+    content: "";
+    margin-top: -50px; /* 상단 바 높이만큼 위로 당김 */
+    padding-top: 50px; /* 다시 여백을 주어 위치 보정 */
+    visibility: hidden; /* 화면에는 보이지 않게 처리 */
+    pointer-events: none; /* 클릭 방해 금지 */
+}
        
 </style>
 </head>
