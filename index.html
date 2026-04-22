@@ -64,15 +64,64 @@
             right: 10px;
         }
     }
+
+    /* 상단 고정 바 스타일 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(224, 224, 224, 0.9); /* 90% 불투명도 */
+    backdrop-filter: blur(5px); /* 배경 흐림 효과 (선택 사항) */
+    border-bottom: 1px solid #ccc;
+    z-index: 1000; /* 최상단에 위치 */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-inner {
+    max-width: 720px; /* 본문 폭에 맞춤 */
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    padding: 0 10px;
+    overflow-x: auto; /* 메뉴가 많을 경우 가로 스크롤 */
+    white-space: nowrap;
+}
+
+.navbar-inner a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* 본문 상단 여백 추가 (바 높이만큼) */
+body {
+    padding-top: 60px; /* 고정 바의 높이에 맞춰 조정 */
+}
+
+
 </style>
 </head>
 
   
 <body>
+<div class="navbar">
+        <div class="navbar-inner">
+            <a href="#jp">JP</a> | 
+            <a href="#en">EN</a> | 
+            <a href="#id">ID</a> | 
+            <a href="#devis">DEV_IS</a> | 
+            <a href="#vocaloid">VOCALO</a> | <br>
+            </div>
+    </div>
 
+    
 <a name="top"><hr></a>
 <div>
 <b>
+<div id="jp">
 <a href="#ghost" class="link-medium">- Ghost / 星街 すいせい☄️</a><br> 
 <a href="#stellar" class="link-medium">- Stellar Stellar / 星街 すいせい☄️</a><br> 
 <a href="#wiiwiiwoo" class="link-medium">- 灼熱にて純情(wii-wii-woo) / 星街 すいせい☄️</a><br> 
@@ -124,6 +173,7 @@
 <a href="#wink" class="link-medium">- 魔眼ウインク / 鷹嶺ルイ🥀</a><br>
 <a href="#himitsuno" class="link-medium">- ひみつのおしごと / 鷹嶺ルイ🥀</a><br>
 <a href="#toritoretreat" class="link-medium">- Tori To Re:TreaT / 鷹嶺ルイ🥀</a><br>
+<div id="en">
 <a href="#liveagain" class="link-medium">- Live Again / Calliope Mori💀</a><br>
 <a href="#offwiththeirhead" class="link-medium">- Off with their heads / Calliope Mori💀</a><br>
 <a href="#streamer" class="link-medium">- The Grim Reaper is a Live-Streamer / Calliope Mori💀</a><br>
@@ -159,14 +209,17 @@
 <a href="#espresso" class="link-medium">- Espresso / Nerissa Ravencroft🎼</a><br>
 <a href="#theboyismine" class="link-medium">- the boy is mine / Nerissa Ravencroft🎼</a><br>
 <a href="#abovebelow" class="link-medium">- ABOVE BELOW / HOLO Justice💄👧🍵🐱</a><br>
+<div id="id">
 <a href="#alicenu" class="link-medium">- ALiCE&u / Ayunda Risu🐿</a><br>
 <a href="#hightide" class="link-medium">- High Tide / Moona Hoshinova🔮</a><br>
 <a href="#100per" class="link-medium">- 100% (feat. Nerissa Ravencroft🎼) / Moona Hoshinova🔮</a><br>
+<div id="devis">
 <a href="#heartbeat" class="link-medium">- 瞬間ハートビート / ReGLOSS🖋️🎹✨🌃🐚🐧⚡</a><br>
 <a href="#symmetry" class="link-medium">- シンメトリ / ReGLOSS🖋️🎹✨🌃🐚🐧⚡</a><br>
 <a href="#sakuramirage" class="link-medium">- サクラミラージュ / ReGLOSS🖋️🎹✨🌃🐚🐧⚡</a><br>
 <a href="#fgroadster" class="link-medium">- FG ROADSTER / FLOW GLOW🎤👑☺️🐅💬🔁💙🎧🔧💅✨</a><br>
 <a href="#24kgold" class="link-medium">- 24K GOLD / FLOW GLOW🎤👑☺️🐅💬🔁💙🎧🔧💅✨</a><br>
+<div id="vocaloid">
 <a href="#roki" class="link-medium">- ロキ / 鏡音リン, みきとP</a><br>
 <a href="#bloominginthemud" class="link-medium">- 泥中に咲く / 初音ミク, HarryP</a><br>
 <a href="#labuka" class="link-medium">- ラブカ？ / Ado, 柊キライ</a><br>
