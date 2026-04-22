@@ -124,7 +124,13 @@ h2, [id] {
     scroll-margin-top: 50px; /* 상단 바 높이(60px) + 여유 공간(20px) */
 }
 
+/* 상단 이동 시 바 높이만큼 여유를 둠 */
+#top {
+    display: block; /* 인라인 요소일 경우 block으로 변경 */
+    scroll-margin-top: 50px; /* 상단 바 높이보다 넉넉하게 설정 */
+}
 
+       
 </style>
 </head>
 
