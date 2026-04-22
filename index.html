@@ -124,10 +124,9 @@ h2, [id] {
     scroll-margin-top: 50px; /* 상단 바 높이(60px) + 여유 공간(20px) */
 }
 
-/* 상단 이동 시 바 높이만큼 여유를 둠 */
-#top {
-    display: block; /* 인라인 요소일 경우 block으로 변경 */
-    scroll-margin-top: 50px; /* 상단 바 높이보다 넉넉하게 설정 */
+
+#scroll-to-top {
+    scroll-margin-top: 80px; /* 이 위치에서 80px 위가 화면 상단이 됨 */
 }
 
        
@@ -136,8 +135,11 @@ h2, [id] {
 
   
 <body>
+<div class="navbar"> </div>
+<div id="scroll-to-top" style="position: absolute; top: 0;"></div>
+
 <div class="navbar">
-        <div class="navbar-inner">
+    <div class="navbar-inner">
             <a href="#jp">JP</a> | 
             <a href="#en">EN</a> | 
             <a href="#id">ID</a> | 
@@ -22403,7 +22405,7 @@ I I I hate you 라 라 라 라 랍니다<br>
 
 </div>
 <div class="top-link">
-<a href="#top"><b><font size=20px>TOP</font></b></a>
+<a href="#scroll-to-top"><b><font size=20px>TOP</font></b></a>
 </div>
   
 </body>
